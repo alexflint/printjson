@@ -10,11 +10,15 @@ import (
 import "io/ioutil"
 
 func fail(msg interface{}, parts ...interface{}) {
-	fmt.Printf(fmt.Sprintf("%v", msg), parts...)
+	fmt.Printf(fmt.Sprintf("%v\n", msg), parts...)
 	os.Exit(1)
 }
+
 func main() {
 	if len(os.Args) > 2 {
+		fail("usage: printjson [FILE]")
+	}
+	if len(os.Args) > 1 && os.Args[1] == "--help" || os.Args[1] == "-help" {
 		fail("usage: printjson [FILE]")
 	}
 
