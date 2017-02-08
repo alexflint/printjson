@@ -18,7 +18,7 @@ func main() {
 	if len(os.Args) > 2 {
 		fail("usage: printjson [FILE]")
 	}
-	if len(os.Args) > 1 && os.Args[1] == "--help" || os.Args[1] == "-help" {
+	if len(os.Args) > 1 && (os.Args[1] == "--help" || os.Args[1] == "-help") {
 		fail("usage: printjson [FILE]")
 	}
 
